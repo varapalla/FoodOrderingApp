@@ -18,7 +18,6 @@ export class FoodListComponent implements OnInit {
   ];
   cartItems: CartItem[] = [];
   foodItems: FoodItem[] = [];
-  private baseUrl = '../assets/pizza.jpg';
 
   constructor(private foodService: FoodService, private cartService: CartService) { }
 
