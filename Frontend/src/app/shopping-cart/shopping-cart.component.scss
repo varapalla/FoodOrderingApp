@@ -4,15 +4,15 @@
     justify-content: space-between;
   }
   
-  // .card {
-  //   border: 1px solid #ccc;
-  //   border-radius: 5px;
-  //   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  //   width: 30%;
-  //   margin-bottom: 20px;
-  //   margin-top:50px;
-  //   margin-left:100px;
-  // }
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-bottom: 20px;
+    margin-top:50px;
+    margin-left:230px;
+  }
   
   .card-header {
     padding: 10px;
@@ -45,4 +45,66 @@
   .card {
     margin-bottom: 20px;
   }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+  }
+  
+  td {
+    border: 1px solid #ddd;
+  }
+  
+  td.item-name {
+    padding-right: 16px;
+  }
+  
+  td.item-price {
+    padding-right: 16px;
+  }
+  
+  td.item-quantity {
+    text-align: center;
+    padding-right: 16px;
+  }
+  
+  td.item-total {
+    padding-right: 16px;
+  }
+  
+  td.item-action {
+    text-align: center;
+    padding-left: 16px;
+  }
+  /* Plus and minus buttons */
+button.increment, button.decrement {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+button.increment:hover, button.decrement:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+/* Remove button */
+button.remove {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+button.remove:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
   
