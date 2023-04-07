@@ -7,6 +7,10 @@ import { FoodListComponent } from './food-list/food-list.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,23 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+
+    ToastrModule.forRoot({
+
+      timeOut: 1000,
+
+      progressBar: true,
+
+      progressAnimation: 'increasing',
+
+      preventDuplicates: true
+
+    })
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

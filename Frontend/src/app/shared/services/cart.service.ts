@@ -5,6 +5,7 @@ import { CartItem } from '../models/cart-item.model';
 import { FoodItem } from '../models/food-item.model';
 import { FoodService } from './food.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class CartService {
   cartItems: CartItem[] = [];
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private foodService: FoodService, private http: HttpClient, private router: Router) { }
+  constructor(private foodService: FoodService, private http: HttpClient, private router: Router,private toastr: ToastrService) { }
 
   // addToCart(item: CartItem) {
   //   const existingItem = this.items.find(i => i.foodItem.id === item.foodItem.id);
@@ -86,6 +87,7 @@ export class CartService {
         // Order was successful, display the order ID to the user
         //alert(`Your order was successful! Your order ID is ${response.orderId}.`);
         this.router.navigate(['/order-confirmation'], { state: { orderId: response.orderId }});
+        this.toastr.success('Enjoy you Meal', 'Order confirmed');
 
       } else {
         // There was an error processing the order

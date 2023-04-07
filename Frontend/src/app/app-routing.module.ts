@@ -5,6 +5,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { OrderConfirmationComponent } from './order-confirmation/order-confirmation.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/food-list', pathMatch: 'full' },
   { path: 'food-list', component: FoodListComponent },

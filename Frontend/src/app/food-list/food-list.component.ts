@@ -3,6 +3,7 @@ import { CartItem } from '../shared/models/cart-item.model';
 import { FoodItem } from '../shared/models/food-item.model';
 import { CartService } from '../shared/services/cart.service';
 import { FoodService } from '../shared/services/food.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-food-list',
@@ -14,12 +15,15 @@ export class FoodListComponent implements OnInit {
   foodList: FoodItem[] = [
     { id: 1, name: "Pizza", description: "Delicious pizza with all your favorite toppings!", price: 9.99,  imageUrl: './assets/pizza.jpg' },
     { id: 2, name: "Burger", description: "Juicy burger with all the fixings!", price: 6.99 ,  imageUrl: './assets/burger.jpg'},
-    { id: 3, name: "Fries", description: "Crispy fries with your choice of dipping sauce.", price: 3.99,  imageUrl: './assets/fries.jpg' }
+    { id: 3, name: "Fries", description: "Crispy fries with your choice of dipping sauce.", price: 3.99,  imageUrl: './assets/fries.jpg' },
+    { id: 4, name: "Samosa", description: "Crispy and savory triangular pastry filled with spiced vegetables!", price: 2.99,  imageUrl: './assets/samosa.jpg' },
+    { id: 5, name: "Dosa", description: "Savory,Crispy made from fermented rice,with delicious chutneys and sambar.", price: 16.99 ,  imageUrl: './assets/dosa.jpg'},
+    { id: 6, name: "Dhokla", description: "Fluffy and spongy Gujarati snack made from fermented batter!", price: 7.99,  imageUrl: './assets/dhokla.jfif' }
   ];
   cartItems: CartItem[] = [];
   foodItems: FoodItem[] = [];
 
-  constructor(private foodService: FoodService, private cartService: CartService) { }
+  constructor(private foodService: FoodService, private cartService: CartService,private toastr: ToastrService) { }
 
 
   ngOnInit(): void {
@@ -42,7 +46,7 @@ export class FoodListComponent implements OnInit {
       this.cartItems.push(newItem);
     }
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-    window.alert("Items added to cart successfully");
+    this.toastr.success('You can add more items.', `HURRAH...! ${item.name} Added`);
   }
 
 
