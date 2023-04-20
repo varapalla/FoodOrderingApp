@@ -25,15 +25,17 @@ jobs:
       run: |
          pwd
          ls -la
+         cd Backend
+         ls -la
 
-    # - name: Install Dependencies
-    #   run: npm install
-    #
-    # - name: Build
-    #   run: ng build --configuration=production
-    #
-    # - name: Archive Build Artifact
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: dist
-    #     path: dist
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Build
+      run: ng build --configuration=production
+
+    - name: Archive Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist
