@@ -23,7 +23,8 @@ jobs:
       run: npm install
 
     - name: Build
-      run: npm run
+      #run: npm run
+      run: ng build
 
     - name: Archive Build Artifact
       uses: actions/upload-artifact@v2
@@ -36,4 +37,4 @@ jobs:
       id: interpolate
       run: |
          pwd
-         ls -la        
+         ls -la
