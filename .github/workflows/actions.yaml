@@ -23,8 +23,7 @@ jobs:
       run: npm install
 
     - name: Build
-      #run: npm run
-      run: ng build
+      run: npm run
 
     - name: Archive Build Artifact
       uses: actions/upload-artifact@v2
