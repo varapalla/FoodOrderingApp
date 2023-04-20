@@ -11,5 +11,5 @@
     "e2e": "ng e2e",
     "ngcc": "ngcc",
     "build": "ng lint && ng test --code-coverage --watch=false && ng build --configuration production"
-  },
+  }
 }
