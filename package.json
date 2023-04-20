@@ -5,6 +5,11 @@
     "express": "^4.18.2"
   },
   "scripts": {
+    "build-dev": "ng build --configuration production",
+    "test": "ng test --code-coverage --watch=false",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "ngcc": "ngcc",
     "build": "ng lint && ng test --code-coverage --watch=false && ng build --configuration production"
   }
 }
