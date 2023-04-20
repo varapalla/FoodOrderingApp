@@ -19,8 +19,19 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
 
+
     - name: Install Dependencies
       run: npm install
+
+    - name: Interpolate environment variables
+      shell: bash
+      id: interpolate
+      run: |
+         pwd
+         ls -la
+         npm cache clean --force
+         cd Frontend
+         rm package-lock.json
 
     - name: Build
       run: npm run build
@@ -30,10 +41,3 @@ jobs:
       with:
         name: dist
         path: dist
-
-    - name: Interpolate environment variables
-      shell: bash
-      id: interpolate
-      run: |
-         pwd
-         ls -la
