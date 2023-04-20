@@ -19,14 +19,21 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
 
-    - name: Install Dependencies
-      run: npm install
+    - name: Interpolate environment variables
+      shell: bash
+      id: interpolate
+      run: |
+         pwd
+         ls -la
 
-    - name: Build
-      run: ng build --configuration=production
-
-    - name: Archive Build Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: dist
-        path: dist
+    # - name: Install Dependencies
+    #   run: npm install
+    #
+    # - name: Build
+    #   run: ng build --configuration=production
+    #
+    # - name: Archive Build Artifact
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: dist
+    #     path: dist
